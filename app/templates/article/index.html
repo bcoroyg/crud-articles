@@ -35,7 +35,7 @@
                 role="button"
                 >Editar</a
               >
-              <form class="col-md-5" action="{{url_for('delete_article', id=article[0])}}" method="post">
+              <form class="col-md-5" action="{{url_for('delete_article')}}" method="post">
                 <input type="hidden" name="id" value="{{article[0]}}">
                 <button
                   class="btn btn-danger rounded-0 w-100"
