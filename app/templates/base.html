@@ -13,14 +13,17 @@
         {{ bootstrap.load_css() }} 
       {% endblock %}
 
-      <title>{% block title %}{% endblock title %}</title>
+      <title>CRUD FLASK CON MYSQL | {% block title %}{% endblock title %}</title>
 
     {% endblock head %}
   </head>
   <body>
-    {% block body %} 
+    {% include 'includes/navbar.html' %}
+    <main class="container">
+        {% block content %} 
 
-    {% endblock body %}
+        {% endblock content %}
+    </main>
 
 
     {% block scripts %}
