@@ -31,7 +31,7 @@ def create_article():
     return render_template("article/add.html")
 
 
-@app.route("/article/<int:id>/edit", methods=["GET", "POST"])
+@app.route("/articles/<int:id>/edit", methods=["GET", "POST"])
 def update_article(id):
 
     if request.method == "POST":
@@ -40,13 +40,14 @@ def update_article(id):
 
         database.update_article(id, name, price)
 
-        return redirect(url_for("get_articles"))
+        #return redirect(url_for("get_articles"))
+        return redirect('/articles')
 
     article = database.get_article(id)
     return render_template('article/edit.html', article=article)
 
 
-@app.route("/article/delete", methods=["POST"])
+@app.route("/articles/delete", methods=["POST"])
 def delete_article():
     id = request.form['id']
     database.delete_article(id)
